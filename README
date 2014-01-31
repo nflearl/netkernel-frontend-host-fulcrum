@@ -1,1 +1,2 @@
-This file was created by IntelliJ IDEA 12.1.6 for binding GitHub repository
+A version of a front end Fulcrum that allows both the host and the port to be passed through.  The initial
+need for this is for the esi-engine project so that the original html may be fetched for ESI processing.
