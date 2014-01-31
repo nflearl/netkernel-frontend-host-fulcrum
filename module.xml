@@ -2,17 +2,17 @@
 <module version="2.0">
 	<meta>
 		<identity>
-			<uri>urn:org:netkernel:fulcrum:frontend</uri>
+			<uri>urn:org:netkernel:fulcrum:frontend:host</uri>
 			<version>1.7.12</version>
 		</identity>
 		<info>
 			<name>Fulcrum / Frontend</name>
-			<description>Fulcrum for HTTP Server on port 8080</description>
+			<description>Fulcrum for HTTP Server on port 8090</description>
 		</info>
 	</meta>
 	<system>
 	</system>
-	<rootspace name="FrontEndFulcrum" public="false" private-filter="false">
+	<rootspace name="FrontEndFulcrumWithHost" public="false" private-filter="false">
 		<endpoint>
 			<id>fulcrum.frontend.HTTPTransport</id>
 			<prototype>HTTPTransport</prototype>
@@ -23,8 +23,8 @@
 			<exceptionHandler>res:/introspect/exceptionhandler</exceptionHandler>
 			<config>
 				<rewrite>
-					<match>https?://[^/]*/([^?]*)(\?.*)?</match>
-					<to>res:/$1</to>
+                    <match>(https?://[^/]*/[^?]*)(\?.*)?</match>
+                    <to>$1</to>
 				</rewrite>
 				<rewrite>
 					<match>ws://[^/]*/([^\?]*)(\?.*)?</match>
@@ -38,7 +38,7 @@
 				<endpoint>
 					<prototype>SimpleImportDiscovery</prototype>
 					<grammar>active:SimpleImportDiscovery</grammar>
-					<type>HTTPFulcrum</type>
+					<type>HTTPFulcrumWithHost</type>
 				</endpoint>
 				<endpoint>
 					<prototype>DynamicImport</prototype>
