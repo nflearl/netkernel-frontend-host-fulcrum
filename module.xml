@@ -23,7 +23,7 @@
 			<exceptionHandler>res:/introspect/exceptionhandler</exceptionHandler>
 			<config>
 				<rewrite>
-                    <match>(https?://[^/]*/[^?]*)(\?.*)?</match>
+                    <match>(https?://[^/]*/.*)</match>
                     <to>$1</to>
 				</rewrite>
 				<rewrite>
